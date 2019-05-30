@@ -6,8 +6,6 @@ import java.util.concurrent.TimeoutException;
 import de.openinc.ow.analytics.providers.DescriptiveAnalyticsProvider;
 import de.openinc.ow.analytics.providers.DiffValueProvider;
 import de.openinc.ow.analytics.providers.FrequencyAnalyticsProvider;
-import de.openinc.ow.analytics.providers.RidesAnalyticsProvider;
-import de.openinc.ow.analytics.providers.STLProvider;
 import de.openinc.ow.core.analytics.SensorProvider.ParseAnalyticSensorProvider;
 import de.openinc.ow.core.api.AdminAPI;
 import de.openinc.ow.core.api.MiddlewareApi;
@@ -19,17 +17,18 @@ import de.openinc.ow.core.data.DataService;
 import de.openinc.ow.core.data.DataSubscriber;
 import de.openinc.ow.core.data.DefaultPersistenceAdapter;
 import de.openinc.ow.core.data.PersistenceAdapter;
-import de.openinc.ow.core.data.model.OpenWareItem;
+import de.openinc.ow.core.data.model.OpenWareDataItem;
 import de.openinc.ow.core.helper.Config;
 import de.openinc.ow.core.opcua.OPCUAServer;
 import de.openinc.ow.core.user.ParseUserAdapter;
 import de.openinc.ow.core.user.UserAPI;
 import de.openinc.ow.core.user.UserService;
-import de.openinc.ow.middleware.consumer.RabbitMQConsumer;
 import de.openinc.ow.middleware.handler.DefaultDataHandler;
-import de.openinc.ow.middleware.handler.TemplateDataHandler;
 import de.openinc.ow.middleware.sender.RabbitMQSender;
+import de.openinc.ow.rabbitmq.RabbitMQConnection;
+import de.openinc.ow.reporting.DescriptivesReport;
 import de.openinc.ow.reporting.ReportsAPI;
+import de.openinc.ow_instance_openinc.IoTGatewayHandler;
 
 /**
  * This Main class is the starting point of the server it includes: server
@@ -60,10 +59,8 @@ public class MyInstance {
 				new DescriptiveAnalyticsProvider());
 		AnalyticsService.getInstance().registerAnalyticsProvider(FrequencyAnalyticsProvider.oid,
 				new FrequencyAnalyticsProvider());
-		AnalyticsService.getInstance().registerAnalyticsProvider(RidesAnalyticsProvider.oid,
-				new RidesAnalyticsProvider());
 		AnalyticsService.getInstance().registerAnalyticsProvider(DiffValueProvider.oid, new DiffValueProvider());
-		AnalyticsService.getInstance().registerAnalyticsProvider(STLProvider.oid, new STLProvider());
+		//AnalyticsService.getInstance().registerAnalyticsProvider(STLProvider.oid, new STLProvider());
 
 		// ----------------------------------------- OPC-UA-Server
 		// -------------------------------------------------------------------------------------
@@ -84,7 +81,7 @@ public class MyInstance {
 
 		// Report API
 		ReportsAPI reports = new ReportsAPI("/report");
-
+		reports.addReportType(DescriptivesReport.TAG, new DescriptivesReport());
 		// Admin API
 		AdminAPI adminApi = new AdminAPI();
 
@@ -103,30 +100,31 @@ public class MyInstance {
 		// ----------------------------------------- DataHandler
 		// -------------------------------------------------------------------------------------
 		// Default Data
+		DataService.addHandler(new IoTGatewayHandler("si-"));
+		DataService.addHandler(new FabLabHandler(""));
 		DataService.addHandler(new DefaultDataHandler());
 
 		// Owntracks Handler
 		OwnTracksDataHandler oth = new OwnTracksDataHandler("owntracks.");
 		DataService.addHandler(oth);
-		// FABLLAB
-		DataService.addHandler(new TemplateDataHandler(new DefaultDataHandler(),
-				TemplateDataHandler.getDefaultOptions(TemplateDataHandler.JSON_TIME_VALUEARRAY_PAIR),
-				"unisiegen.fablab.power"));
+
+		/*
 		// ZUG Linear
 		DataService.addHandler(new ZugLinearHandler("sensor.zug.LinearAcceleration", "test@zug40.de"));
 		// ZUG Einzelne Number Values
+		
 		DataService.addHandler(new ZugNumberHandler("sensor.zug.LightIntensity.x", "test@zug40.de"));
 		DataService.addHandler(new ZugNumberHandler("sensor.zug.speed", "test@zug40.de"));
 		DataService.addHandler(new ZugNumberHandler("sensor.zug.battery.percentage", "test@zug40.de"));
 		DataService.addHandler(new ZugNumberHandler("sensor.zug.noise.decibels", "test@zug40.de"));
 		DataService.addHandler(new ZugStringHandler("sensor.zug.rfid", "test@zug40.de"));
-
+		*/
 		// ----------------------------------------- DataPublisher
 		// -------------------------------------------------------------------------------------
 		if (Config.publishParsedData) {
 			RabbitMQSender sender = new RabbitMQSender(Config.rmqPath, "owcore.data");
 			DataService.addSubscription(new DataSubscriber() {
-				public void receive(OpenWareItem item) throws Exception {
+				public void receive(OpenWareDataItem item) throws Exception {
 					String topic = item.getUser().replaceAll("\\.", "") + "." + item.getId();
 					sender.send(item.toString(), topic);
 				}
@@ -136,9 +134,9 @@ public class MyInstance {
 		// ----------------------------------------- DataConsumer
 		// -------------------------------------------------------------------------------------
 
-		RabbitMQConsumer consumer = new RabbitMQConsumer(Config.rmqPath, Config.rmqExchange, Config.rmqTopic,
-				Integer.valueOf(Config.rmqPort), Config.rmqUser, Config.rmqPass, Config.rmqQueue,
-				Config.rmqQueueAutoDelete);
+		RabbitMQConnection defaultRabbit = new RabbitMQConnection();
+		defaultRabbit.consumeDefault();
+
 		/*
 		//Fake Rüst Daten
 		while (true) {

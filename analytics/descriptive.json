@@ -1,0 +1,92 @@
+{
+  "label": "Aggregation",
+  "valueTypesDefault": [{ "name": "Durchschnittswert", "type": "Number" }],
+  "parameterTemplate": [
+    {
+      "key": "name",
+      "label": "Name des anzulegenden Sensors",
+      "type": "input",
+      "required": true,
+      "settings": { "type": "text" }
+    },
+    {
+      "key": "sensor",
+      "label": "Zu verwendende Datenquelle",
+      "type": "select-item",
+      "required": true,
+      "settings": {
+        "type": ["Number"],
+        "search": true,
+        "multi": true,
+        "items": true
+      }
+    },
+    {
+      "key": "interval",
+      "label": "Zeitfenster über das Werte zusammengefasst werden",
+      "type": "select",
+      "required": true,
+      "settings": {
+        "options": [
+          {
+            "label": "Minuten",
+            "value": 60000
+          },
+          {
+            "label": "15-Minuten",
+            "value": 900000
+          },
+          {
+            "label": "Stunden",
+            "value": 3600000
+          },
+          {
+            "label": "Tage",
+            "value": 86400000
+          }
+        ]
+      }
+    },
+    {
+      "key": "descrop",
+      "label": "Bitte wählen Sie aus, wie Werte aggregiert werden sollen",
+      "type": "select",
+      "required": true,
+      "settings": {
+        "options": [
+          {
+            "label": "Summe aller Werte im Zeitfenster",
+            "value": "sum"
+          },
+          {
+            "label": "Durchschnitt aller Werte im Zeitfenster",
+            "value": "mean"
+          },
+          {
+            "label": "Minimum aller Werte im Zeitfenster",
+            "value": "min"
+          },
+          {
+            "label": "Maximum aller Werte im Zeitfenster",
+            "value": "max"
+          },
+          {
+            "label": "Standardabweichung der Werte im Zeitfenster",
+            "value": "stdd"
+          },
+          {
+            "label": "Varianz der Werte im Zeitfenster",
+            "value": "variance"
+          }
+        ]
+      }
+    },
+    {
+      "key": "valueType-1",
+      "label": "Ergänzende Beschreibung des Wertes (Legende)",
+      "type": "input",
+      "required": true,
+      "settings": { "type": "text" }
+    }
+  ]
+}

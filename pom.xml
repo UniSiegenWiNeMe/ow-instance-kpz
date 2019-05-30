@@ -48,5 +48,10 @@
 			<artifactId>ow-core</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>de.openinc.openware</groupId>
+			<artifactId>ow-instance-openinc</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 </project>

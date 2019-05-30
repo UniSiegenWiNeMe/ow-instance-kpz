@@ -1,0 +1,21 @@
+ {	"label":"Differenzwerte",
+	"valueTypesDefault":[{ "name": "Wert", "type": "Number" }], 	
+	"parameterTemplate":[{ "key": "name",
+						   "label": "Name des anzulegenden Sensors",
+						   "type": "input",
+						   "required": true,
+						   "settings": { "type":"text"}
+						  },
+						  {
+						   "key": "sensor",
+						   "label": "Zu verwendende Datenquelle",
+						   "type": "select-item",
+						   "required": true,
+						   "settings": {"type": ["Boolean", "Number"],
+								      	"search": true,
+								      	"multi": false,
+								      	"items": true
+								       }
+						  }]
+
+}
