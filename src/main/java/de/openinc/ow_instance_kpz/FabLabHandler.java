@@ -86,6 +86,7 @@ public class FabLabHandler implements DataHandler {
 			item.units(valueTypesListeUnit);
 
 			list.add(item);
+			return list;
 		} else if (messageType[1].equals("Feinstaub")) {
 			OpenWareDataItem item = new OpenWareDataItem(
 					"fablab.sensor.status." + messageType[1] + "." + messageType[2], "fablab-01",
@@ -110,108 +111,11 @@ public class FabLabHandler implements DataHandler {
 			item.units(valueTypesListeUnit);
 
 			list.add(item);
+			return list;
+		} else {
+			return null;
 		}
 
-		/*
-		String plcUnit = messageType[0];
-		//Received Config Data
-		
-		
-		
-		if (messageType[1].startsWith("TagConfiguration")) {
-			OpenWareInstance.getInstance().logInfo("Received TagConfiguration from PLC\n" + data);
-			initMappings(plcUnit, data);
-			return null;
-		}
-		if (messageType[1].startsWith("LocationConfig")) {
-			updateLocationConfig(new JSONObject(data));
-		}
-		
-		if (!locations.keySet().contains(plcUnit)) {
-			requestMarketData();
-			return null;
-		}
-		
-		if (!(messageType[1].equals("TagValues") || messageType[1].equals("EventTagValues")))
-			return null;
-		
-		JSONObject jData = new JSONObject(data);
-		JSONArray values = jData.getJSONArray("TagData");
-		String collectionID = plcUnit + "---" + jData.getInt("CollectionId");
-		if (!(this.mapping.containsKey(collectionID) || this.statusMapping.containsKey(collectionID))) {
-			requestTagConfiguration(plcUnit);
-			return null;
-		}
-		//List to return
-		ArrayList<OpenWareDataItem> list = new ArrayList<>();
-		if (this.statusMapping.containsKey(collectionID)) {
-			JSONObject meta = new JSONObject();
-			JSONObject location = locations.getOrDefault(plcUnit, new JSONObject());
-			meta.put("location", location);
-			meta.put("itemType", "status");
-			OpenWareDataItem item = new OpenWareDataItem("siautomation.sensor.status", plcUnit,
-					location.optString("name") + "-Status", "", meta);
-			for (int i = 0; i < values.length(); i++) {
-				try {
-					JSONObject cVal = values.getJSONObject(i);
-					int size = cVal.getJSONObject("Values").length();
-					long res = format.parseDateTime(cVal.getString("Time")).getMillis();
-		
-					List<String> cNames = new ArrayList<>();
-					List<String> cUntis = new ArrayList<>();
-					String[][] bools = new String[size][2];
-					OpenWareValue val = new OpenWareValue(res);
-		
-					for (String key : cVal.getJSONObject("Values").keySet()) {
-						int index = this.statusMapping.get(collectionID).get(key);
-						bools[index][0] = key;
-						bools[index][1] = cVal.getJSONObject("Values").optString(key);
-					}
-					for (int x = 0; x < bools.length; x++) {
-						val.addValueDimension(bools[x][1]);
-						cNames.add(bools[x][0]);
-						cUntis.add("");
-					}
-					ArrayList<OpenWareValue> vals = new ArrayList<>();
-					vals.add(val);
-					item.valueNames(cNames);
-					item.units(cUntis);
-					item.value(vals);
-					list.add(item);
-				} catch (JSONException e) {
-					e.printStackTrace();
-					return null;
-				}
-			}
-		} else {
-			for (int i = 0; i < values.length(); i++) {
-				try {
-					JSONObject cVal = values.getJSONObject(i);
-					long res = format.parseDateTime(cVal.getString("Time")).getMillis();
-					for (String key : cVal.getJSONObject("Values").keySet()) {
-		
-						if (this.mapping.get(collectionID).containsKey(key)) {
-							OpenWareDataItem item = this.mapping.get(collectionID).get(key);
-							OpenWareValue val = new OpenWareValue(res);
-							ArrayList<OpenWareValue> vals = new ArrayList<>();
-							val.addValueDimension(cVal.getJSONObject("Values").optString(key));
-							vals.add(val);
-							item.value(vals);
-							list.add(item);
-						} else {
-							requestTagConfiguration(plcUnit);
-							continue;
-						}
-		
-					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-					return null;
-				}
-			}
-		}
-		 */
-		return list;
 	}
 
 }

@@ -101,8 +101,8 @@ public class MyInstance {
 		// -------------------------------------------------------------------------------------
 		// Default Data
 		DataService.addHandler(new IoTGatewayHandler("si-"));
-		DataService.addHandler(new FabLabHandler(""));
 		DataService.addHandler(new DefaultDataHandler());
+		DataService.addHandler(new FabLabHandler(".fablab"));
 
 		// Owntracks Handler
 		OwnTracksDataHandler oth = new OwnTracksDataHandler("owntracks.");
