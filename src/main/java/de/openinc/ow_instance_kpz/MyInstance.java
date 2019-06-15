@@ -80,8 +80,8 @@ public class MyInstance {
 		AnalyticsServiceAPI asa = new AnalyticsServiceAPI();
 
 		// Report API
-		ReportsAPI reports = new ReportsAPI("/report");
-		reports.addReportType(DescriptivesReport.TAG, new DescriptivesReport());
+		ReportsAPI reports = ReportsAPI.getInstance();
+		reports.addReportType(DescriptivesReport.TAG, DescriptivesReport.class);
 		// Admin API
 		AdminAPI adminApi = new AdminAPI();
 
