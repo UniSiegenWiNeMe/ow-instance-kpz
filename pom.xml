@@ -5,7 +5,12 @@
 	<groupId>de.openinc.openware</groupId>
 	<artifactId>ow-instance-kpz</artifactId>
 	<version>1.0.0</version>
+	<properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+</properties>
 	<build>
+   
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

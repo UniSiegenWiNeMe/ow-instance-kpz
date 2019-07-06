@@ -5,7 +5,6 @@ import java.util.concurrent.TimeoutException;
 
 import de.openinc.ow.analytics.providers.DescriptiveAnalyticsProvider;
 import de.openinc.ow.analytics.providers.DiffValueProvider;
-import de.openinc.ow.analytics.providers.FrequencyAnalyticsProvider;
 import de.openinc.ow.core.analytics.SensorProvider.ParseAnalyticSensorProvider;
 import de.openinc.ow.core.api.AdminAPI;
 import de.openinc.ow.core.api.MiddlewareApi;
@@ -28,6 +27,7 @@ import de.openinc.ow.middleware.sender.RabbitMQSender;
 import de.openinc.ow.rabbitmq.RabbitMQConnection;
 import de.openinc.ow.reporting.DescriptivesReport;
 import de.openinc.ow.reporting.ReportsAPI;
+import de.openinc.ow.scheduler.SchedulerService;
 import de.openinc.ow_instance_openinc.IoTGatewayHandler;
 
 /**
@@ -57,8 +57,7 @@ public class MyInstance {
 		AnalyticsService.getInstance().setSensorProvider(new ParseAnalyticSensorProvider());
 		AnalyticsService.getInstance().registerAnalyticsProvider(DescriptiveAnalyticsProvider.oid,
 				new DescriptiveAnalyticsProvider());
-		AnalyticsService.getInstance().registerAnalyticsProvider(FrequencyAnalyticsProvider.oid,
-				new FrequencyAnalyticsProvider());
+		//AnalyticsService.getInstance().registerAnalyticsProvider(FrequencyAnalyticsProvider.oid,new FrequencyAnalyticsProvider());
 		AnalyticsService.getInstance().registerAnalyticsProvider(DiffValueProvider.oid, new DiffValueProvider());
 		//AnalyticsService.getInstance().registerAnalyticsProvider(STLProvider.oid, new STLProvider());
 
@@ -88,37 +87,26 @@ public class MyInstance {
 		// Alarm & Event API
 		AlarmService as = AlarmService.getInstance();
 
+		//Scheduler
+		SchedulerService ss = SchedulerService.getInstance();
+
 		OpenWareInstance.registerService(middlewareApi);
 		OpenWareInstance.registerService(userAPI);
 		OpenWareInstance.registerService(asa);
 		OpenWareInstance.registerService(reports);
 		OpenWareInstance.registerService(adminApi);
 		OpenWareInstance.registerService(as);
+		OpenWareInstance.registerService(ss);
 
 		OpenWareInstance.getInstance().startInstance();
 
 		// ----------------------------------------- DataHandler
 		// -------------------------------------------------------------------------------------
-		// Default Data
 		DataService.addHandler(new IoTGatewayHandler("si-"));
 		DataService.addHandler(new DefaultDataHandler());
 		DataService.addHandler(new FabLabHandler(".fablab"));
+		DataService.addHandler(new OwnTracksDataHandler("owntracks."));
 
-		// Owntracks Handler
-		OwnTracksDataHandler oth = new OwnTracksDataHandler("owntracks.");
-		DataService.addHandler(oth);
-
-		/*
-		// ZUG Linear
-		DataService.addHandler(new ZugLinearHandler("sensor.zug.LinearAcceleration", "test@zug40.de"));
-		// ZUG Einzelne Number Values
-		
-		DataService.addHandler(new ZugNumberHandler("sensor.zug.LightIntensity.x", "test@zug40.de"));
-		DataService.addHandler(new ZugNumberHandler("sensor.zug.speed", "test@zug40.de"));
-		DataService.addHandler(new ZugNumberHandler("sensor.zug.battery.percentage", "test@zug40.de"));
-		DataService.addHandler(new ZugNumberHandler("sensor.zug.noise.decibels", "test@zug40.de"));
-		DataService.addHandler(new ZugStringHandler("sensor.zug.rfid", "test@zug40.de"));
-		*/
 		// ----------------------------------------- DataPublisher
 		// -------------------------------------------------------------------------------------
 		if (Config.publishParsedData) {

@@ -8,8 +8,7 @@ import org.json.JSONObject;
 
 import de.openinc.ow.core.data.model.OpenWareDataItem;
 import de.openinc.ow.core.data.model.OpenWareValue;
-import de.openinc.ow.core.data.model.valuetypes.OpenWareGeo;
-import de.openinc.ow.core.data.model.valuetypes.OpenWareNumber;
+import de.openinc.ow.core.data.model.valuetypes.OpenWareValueDimension;
 import de.openinc.ow.middleware.handler.DataHandler;
 
 public class OwnTracksDataHandler implements DataHandler {
@@ -19,18 +18,19 @@ public class OwnTracksDataHandler implements DataHandler {
 	private ArrayList<String> locationUnits;
 	private ArrayList<String> batteryNames;
 	private ArrayList<String> batteryUnits;
+	private ArrayList<OpenWareValueDimension> valuetypesGeo;
+	private ArrayList<OpenWareValueDimension> valuetypesBatt;
+	private OpenWareDataItem locItem;
+	private OpenWareDataItem battItem;
 
 	public OwnTracksDataHandler(String topicPrefix) {
 		this.prefix = topicPrefix;
-		this.locationNames = new ArrayList<>();
-		locationNames.add("Standort");
-		this.locationUnits = new ArrayList<>();
-		locationUnits.add("");
-
-		this.batteryNames = new ArrayList<>();
-		batteryNames.add("Prozent Akku-Ladestand");
-		this.batteryUnits = new ArrayList<>();
-		batteryUnits.add("%");
+		this.valuetypesGeo = new ArrayList<OpenWareValueDimension>();
+		this.valuetypesBatt = new ArrayList<OpenWareValueDimension>();
+		valuetypesGeo.add(OpenWareValueDimension.createNewDimension("Standort", "", "geo"));
+		valuetypesBatt.add(OpenWareValueDimension.createNewDimension("Prozent Akku-Ladestand", "%", "number"));
+		locItem = new OpenWareDataItem("owntracks.location", "toSet", "Standort", new JSONObject(), valuetypesGeo);
+		battItem = new OpenWareDataItem("owntracks.battery", "toSet", "Ladezustand", new JSONObject(), valuetypesBatt);
 	}
 
 	@Override
@@ -42,6 +42,7 @@ public class OwnTracksDataHandler implements DataHandler {
 		JSONObject mData = new JSONObject(data);
 
 		String user = id.replace(prefix, "");
+		locItem.setUser(user);
 		long ts = mData.getLong("tst") * 1000l;
 
 		if (mData.getString("_type").equals("location")) {
@@ -65,30 +66,25 @@ public class OwnTracksDataHandler implements DataHandler {
 			geoJSON.put("properties", prop);
 			geoJSON.put("geometry", geom);
 
-			OpenWareDataItem item = new OpenWareDataItem("owntracks.location", user, "Standort", new JSONObject());
-			item.valueNames(this.locationNames);
-			item.units(this.locationUnits);
 			OpenWareValue val = new OpenWareValue(ts);
-			val.addValueDimension(new OpenWareGeo(geoJSON));
+			val.addValueDimension(locItem.getValueTypes().get(0).createValueForDimension(geoJSON));
 			ArrayList<OpenWareValue> vals = new ArrayList<>();
 			vals.add(val);
-			item.value(vals);
+			locItem.value(vals);
 
-			res.add(item);
+			res.add(locItem);
 		}
 
 		if (mData.has("batt")) {
 			double battery = mData.getDouble("batt");
-			OpenWareDataItem item = new OpenWareDataItem("owntracks.battery", user, "Ladezustand", new JSONObject());
-			item.valueNames(this.batteryNames);
-			item.units(this.batteryUnits);
+			battItem.setUser(user);
 			OpenWareValue val = new OpenWareValue(ts);
-			val.addValueDimension(new OpenWareNumber(battery));
+			val.addValueDimension(battItem.getValueTypes().get(0).createValueForDimension((battery)));
 			ArrayList<OpenWareValue> vals = new ArrayList<>();
 			vals.add(val);
-			item.value(vals);
+			battItem.value(vals);
 
-			res.add(item);
+			res.add(battItem);
 		}
 		return res;
 
