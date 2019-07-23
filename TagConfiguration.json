@@ -1,0 +1,732 @@
+[{
+  "ApiVersion": 1,
+  "Complete": true,
+  "plc": "si-1371-000",
+  "Collections": [
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_3K3",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO1",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO2",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO3",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO4",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO5",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO6",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO7",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO8",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO9",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_D010",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO11",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO12",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO13",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO14",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO15",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_3K3_DO16",
+          "Unit": "BOOL"
+        }
+      ],
+      "Id": 0,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_4K0",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "word",
+          "Tag": "Qi_4K0_AO1",
+          "Unit": "WORD"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "word",
+          "Tag": "Qi_4K0_AO2",
+          "Unit": "WORD"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "word",
+          "Tag": "Qi_4K0_AO3",
+          "Unit": "WORD"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "word",
+          "Tag": "Qi_4K0_AO4",
+          "Unit": "WORD"
+        }
+      ],
+      "Id": 1,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_5K3",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI1",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI2",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI3",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI4",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI5",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI6",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI7",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI8",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI9",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI10",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI11",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI12",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI13",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI14",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI15",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Ix_5K3_DI16",
+          "Unit": "BOOL"
+        }
+      ],
+      "Id": 2,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_6K0",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO1",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO2",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO3",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO4",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO5",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO6",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO7",
+          "Unit": "BOOL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "byte",
+          "Tag": "Qx_6K0_DO8",
+          "Unit": "BOOL"
+        }
+      ],
+      "Id": 3,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_6K3",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R3",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R4",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R5",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R6",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R7",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Mr_Mittelwert_6K3_R8",
+          "Unit": "REAL"
+        }
+      ],
+      "Id": 4,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 30000,
+      "CollectionName": "200_6K6",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "int",
+          "Tag": "Mi_Istwert_6K6_AI1",
+          "Unit": "INT"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "int",
+          "Tag": "Mi_Istwert_6K6_AI2",
+          "Unit": "INT"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "int",
+          "Tag": "Mi_Istwert_6K6_AI3",
+          "Unit": "INT"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "int",
+          "Tag": "Mi_Istwert_6K6_AI4",
+          "Unit": "INT"
+        }
+      ],
+      "Id": 5,
+      "PublishInterval": 30000
+    },
+    {
+      "SampleRate": 5000,
+      "CollectionName": "Janitza-Zähler_1",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L1-L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L1-L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L1_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Summe_Stromstärke_L1_L2_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L1_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_L3_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL1_IL1_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL2_IL2_UMG_96_1",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL3_IL3_UMG_96_1",
+          "Unit": "REAL"
+        }
+      ],
+      "Id": 6,
+      "PublishInterval": 5000
+    },
+    {
+      "SampleRate": 5000,
+      "CollectionName": "Janitza-Zähler_2",
+      "TagData": [
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkarbeit_L1-L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindarbeit_L1-L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Scheinarbeit_L1_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Stromstärke_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Summe_Stromstärke_L1_L2_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Wirkleistung_L1_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Blindleistung_L1_L3_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL1_IL1_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL2_IL2_UMG_96_2",
+          "Unit": "REAL"
+        },
+        {
+          "TypeId": 0,
+          "ValueType": "real",
+          "Tag": "Cosinus_Phi_UL3_IL3_UMG_96_2",
+          "Unit": "REAL"
+        }
+      ],
+      "Id": 7,
+      "PublishInterval": 5000
+    }
+  ],
+  "FormatId": "TagConfiguration"
+}]
