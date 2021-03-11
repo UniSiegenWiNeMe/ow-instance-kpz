@@ -2,10 +2,12 @@ package de.openinc.ow_instance_kpz;
 
 import java.util.List;
 
-import de.openinc.ow.core.data.model.OpenWareDataItem;
+import org.json.JSONObject;
+
+import de.openinc.api.DataHandler;
 import de.openinc.ow.core.helper.Config;
-import de.openinc.ow.middleware.handler.DataHandler;
-import de.openinc.ow.middleware.handler.DefaultDataHandler;
+import de.openinc.ow.core.model.data.OpenWareDataItem;
+import de.openinc.owee.datahandler.DefaultDataHandler;
 
 public class ZugNumberHandler implements DataHandler {
 
@@ -52,6 +54,12 @@ public class ZugNumberHandler implements DataHandler {
 		
 		*/
 		return null;
+	}
+
+	@Override
+	public boolean setOptions(JSONObject options) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

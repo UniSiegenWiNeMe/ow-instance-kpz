@@ -6,10 +6,10 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import de.openinc.ow.core.data.model.OpenWareDataItem;
-import de.openinc.ow.core.data.model.OpenWareValue;
-import de.openinc.ow.core.data.model.valuetypes.OpenWareValueDimension;
-import de.openinc.ow.middleware.handler.DataHandler;
+import de.openinc.api.DataHandler;
+import de.openinc.ow.core.model.data.OpenWareDataItem;
+import de.openinc.ow.core.model.data.OpenWareValue;
+import de.openinc.ow.core.model.data.OpenWareValueDimension;
 
 public class OwnTracksDataHandler implements DataHandler {
 
@@ -88,6 +88,12 @@ public class OwnTracksDataHandler implements DataHandler {
 		}
 		return res;
 
+	}
+
+	@Override
+	public boolean setOptions(JSONObject options) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

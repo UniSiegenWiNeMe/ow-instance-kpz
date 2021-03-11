@@ -12,6 +12,12 @@
 	<build>
    
     <plugins>
+      <!--<excludes>
+			                <exclude>META-INF/*.SF</exclude>
+			                <exclude>META-INF/*.DSA</exclude>
+			                <exclude>META-INF/*.RSA</exclude>
+			            </excludes>-->
+      <!-- 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -28,11 +34,7 @@
               <filters>
 			        <filter>
 			            <artifact>*:*</artifact>
-			            <excludes>
-			                <exclude>META-INF/*.SF</exclude>
-			                <exclude>META-INF/*.DSA</exclude>
-			                <exclude>META-INF/*.RSA</exclude>
-			            </excludes>
+			           
 			        </filter>
 			    </filters>
               <transformers>
@@ -44,19 +46,39 @@
           </execution>
         </executions>
       </plugin>
-    </plugins>
+       -->
+       		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>de.openinc.ow_instance_kpz.MyInstance</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+       </plugins>
   </build>
    
 	<dependencies>
-		<dependency>
+	<dependency>
 			<groupId>de.openinc.openware</groupId>
 			<artifactId>ow-core</artifactId>
-			<version>1.0.0</version>
+			<scope>provided</scope>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>de.openinc.openware</groupId>
-			<artifactId>ow-instance-openinc</artifactId>
-			<version>1.0.0</version>
+			<groupId>de.openinc</groupId>
+  			<artifactId>ow-ee</artifactId>
+  			<scope>provided</scope>
+  			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>de.openinc</groupId>
+  			<artifactId>ow-transformations</artifactId>
+  			<scope>provided</scope>
+  			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

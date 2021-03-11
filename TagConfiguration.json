@@ -389,7 +389,7 @@
     },
     {
       "SampleRate": 5000,
-      "CollectionName": "Janitza-Zähler_1",
+      "CollectionName": "Janitza-Z?hler_1",
       "TagData": [
         {
           "TypeId": 0,
@@ -466,25 +466,25 @@
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L1_UMG_96_1",
+          "Tag": "Stromst?rke_L1_UMG_96_1",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L2_UMG_96_1",
+          "Tag": "Stromst?rke_L2_UMG_96_1",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L3_UMG_96_1",
+          "Tag": "Stromst?rke_L3_UMG_96_1",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Summe_Stromstärke_L1_L2_L3_UMG_96_1",
+          "Tag": "Summe_Stromst?rke_L1_L2_L3_UMG_96_1",
           "Unit": "REAL"
         },
         {
@@ -559,7 +559,7 @@
     },
     {
       "SampleRate": 5000,
-      "CollectionName": "Janitza-Zähler_2",
+      "CollectionName": "Janitza-Z?hler_2",
       "TagData": [
         {
           "TypeId": 0,
@@ -636,25 +636,25 @@
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L1_UMG_96_2",
+          "Tag": "Stromst?rke_L1_UMG_96_2",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L2_UMG_96_2",
+          "Tag": "Stromst?rke_L2_UMG_96_2",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Stromstärke_L3_UMG_96_2",
+          "Tag": "Stromst?rke_L3_UMG_96_2",
           "Unit": "REAL"
         },
         {
           "TypeId": 0,
           "ValueType": "real",
-          "Tag": "Summe_Stromstärke_L1_L2_L3_UMG_96_2",
+          "Tag": "Summe_Stromst?rke_L1_L2_L3_UMG_96_2",
           "Unit": "REAL"
         },
         {

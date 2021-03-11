@@ -21,3 +21,10 @@ logs/
 spark.properties
 parse.properties
 adminSession
+conf/de.openinc.ow.middleware.io.MailSender.json
+
+conf/de.openinc.owee.io.rabbitmq.RabbitMQConnection.json
+
+conf/de.openinc.owee.io.rabbitmq.RabbitMQSender.json
+
+jwt.json
