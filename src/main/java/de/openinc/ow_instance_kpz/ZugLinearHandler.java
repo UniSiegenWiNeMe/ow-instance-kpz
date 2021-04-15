@@ -5,8 +5,8 @@ import java.util.List;
 import org.json.JSONObject;
 
 import de.openinc.api.DataHandler;
-import de.openinc.ow.core.helper.Config;
-import de.openinc.ow.core.model.data.OpenWareDataItem;
+import de.openinc.model.data.OpenWareDataItem;
+import de.openinc.ow.helper.Config;
 import de.openinc.owee.datahandler.DefaultDataHandler;
 
 public class ZugLinearHandler implements DataHandler {
