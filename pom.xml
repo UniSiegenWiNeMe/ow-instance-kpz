@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.openinc.openware</groupId>
-	<artifactId>ow-instance-kpz</artifactId>
+	<artifactId>ow-instance</artifactId>
 	<version>1.0.0</version>
 	<properties>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -53,7 +53,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>de.openinc.ow_instance_kpz.MyInstance</mainClass>
+							<mainClass>de.openinc.ow.instance.MyInstance</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -80,5 +80,32 @@
   			<scope>provided</scope>
   			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>de.openinc</groupId>
+			<artifactId>telegram</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			  <groupId>de.openinc</groupId>
+			  <artifactId>ow-mqtt</artifactId>
+			  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.openinc</groupId>
+			<artifactId>simqtt</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.openinc.plugin</groupId>
+			<artifactId>softingUaGate</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+		  <groupId>de.openinc</groupId>
+		  <artifactId>TTNV3</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+				
 	</dependencies>
 </project>

@@ -1,4 +1,4 @@
-package de.openinc.ow_instance_kpz;
+package de.openinc.ow.instance;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import de.openinc.ow.OpenWareInstance;
 import de.openinc.ow.middleware.services.DataService;
+import de.openinc.owee.CachePersistenceAdapter;
 import de.openinc.owee.opcua.OPCUAServer;
 
 /**
@@ -32,15 +33,15 @@ public class MyInstance {
 		OpenWareInstance.getInstance().startInstance();
 
 		//SpeedTest
-		
 		/*
+		
 		//Fake Ruest Daten
 		long curr  = System.currentTimeMillis();
 		//while (System.currentTimeMillis()-curr<10000) {
 		while (true) {
 			long ts = System.currentTimeMillis();
-			String s2 = "{\"id\":\"data.test.ruestie2\",\"user\":\"fit2\",\"parent\":[],\"meta\":{},\"name\":\"Maschine_4711_R�stenprozess\",\"icon\":\"\",\"valueTypes\":[{\"unit\":\"#\",\"name\":\"Ruestschritt\",\"type\":\"Number\"}]}";
-			//String s = "{\"id\":\"data.test.ruestie2\",\"user\":\"fit2\",\"parent\":[],\"meta\":{},\"name\":\"Maschine_4711_R�stenprozess\",\"icon\":\"\",\"valueTypes\":[{\"unit\":\"#\",\"name\":\"Ruestschritt\",\"type\":\"Number\"},{\"unit\":\"ms\",\"name\":\"Schrittdauer\",\"type\":\"Number\"},{\"unit\":\"\",\"name\":\"Ruestvorgangsid\",\"type\":\"String\"},{\"unit\":\"\",\"name\":\"Kommentar\",\"type\":\"String\"}]}";
+			String s2 = "{\"id\":\"data.test.ruestie2\",\"user\":\"fit2\",\"parent\":[],\"meta\":{},\"name\":\"Maschine_4711_Ruestenprozess\",\"icon\":\"\",\"valueTypes\":[{\"unit\":\"#\",\"name\":\"Ruestschritt\",\"type\":\"Number\"}]}";
+			//String s = "{\"id\":\"data.test.ruestie2\",\"user\":\"fit2\",\"parent\":[],\"meta\":{},\"name\":\"Maschine_4711_Ruestenprozess\",\"icon\":\"\",\"valueTypes\":[{\"unit\":\"#\",\"name\":\"Ruestschritt\",\"type\":\"Number\"},{\"unit\":\"ms\",\"name\":\"Schrittdauer\",\"type\":\"Number\"},{\"unit\":\"\",\"name\":\"Ruestvorgangsid\",\"type\":\"String\"},{\"unit\":\"\",\"name\":\"Kommentar\",\"type\":\"String\"}]}";
 			JSONObject obj = new JSONObject(s2);
 			
 			int[] bases = new int[] { 60, 120, 50, 80, 90, 110, 180, 20, 75 };
@@ -91,8 +92,8 @@ public class MyInstance {
 			}
 		 	
 		}
-		
 		*/
+		
 		
 		// ----------------------------------------- DataPublisher
 		// -------------------------------------------------------------------------------------
@@ -129,6 +130,9 @@ public class MyInstance {
 		//				"10secTest", AggregationJob.AGGREGATION_GROUP_TAG, "0 * * * * ?");
 		//		ajob.setOptions(options);
 		//		SchedulerService.getInstance().schedule(ajob);
+		
+		//CachePersistenceAdapter adapter  = (CachePersistenceAdapter)DataService.getCurrentPersistenceAdapter();
+		//adapter.updateAggregation("iotHennef_mobility_bikes", "bike.530000", 0, System.currentTimeMillis(), false);
 
 	}// main
 

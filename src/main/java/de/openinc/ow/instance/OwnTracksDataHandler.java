@@ -1,4 +1,4 @@
-package de.openinc.ow_instance_kpz;
+package de.openinc.ow.instance;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ public class OwnTracksDataHandler implements DataHandler {
 		JSONObject mData = new JSONObject(data);
 
 		String user = id.replace(prefix, "");
-		locItem.setUser(user);
+		locItem.setSource(user);
 		long ts = mData.getLong("tst") * 1000l;
 
 		if (mData.getString("_type").equals("location")) {
@@ -85,7 +85,7 @@ public class OwnTracksDataHandler implements DataHandler {
 		if (mData.has("batt")) {
 			try {
 				double battery = mData.getDouble("batt");
-				battItem.setUser(user);
+				battItem.setSource(user);
 				OpenWareValue val = new OpenWareValue(ts);
 				val.addValueDimension(battItem.getValueTypes().get(0).createValueForDimension((battery)));
 				ArrayList<OpenWareValue> vals = new ArrayList<>();

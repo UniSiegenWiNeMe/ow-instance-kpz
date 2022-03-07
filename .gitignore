@@ -28,3 +28,7 @@ conf/de.openinc.owee.io.rabbitmq.RabbitMQConnection.json
 conf/de.openinc.owee.io.rabbitmq.RabbitMQSender.json
 
 jwt.json
+
+.env
+
+conf/
