@@ -32,3 +32,4 @@ jwt.json
 .env
 
 conf/
+reports/

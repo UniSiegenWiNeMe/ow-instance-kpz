@@ -105,7 +105,11 @@
 		  <artifactId>TTNV3</artifactId>
 		  <version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+		<dependency>
+		  <groupId>de.openinc.miaas</groupId>
+		  <artifactId>mds</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
 				
 	</dependencies>
 </project>
