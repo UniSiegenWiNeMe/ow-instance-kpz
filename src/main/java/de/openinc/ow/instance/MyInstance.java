@@ -24,7 +24,8 @@ public class MyInstance {
 		// ----------------------------------------- APIs
 		// -------------------------------------------------------------------------------------
 
-		OpenWareInstance.getInstance().startInstance();
+		OpenWareInstance.getInstance()
+						.startInstance();
 
 		/*-
 		String test = "{\n" + "  \"id\" : \"speedtest{{id}}\",\n" + "  \"meta\" : {\n"
